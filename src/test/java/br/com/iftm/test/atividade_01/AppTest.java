@@ -21,20 +21,19 @@ public class AppTest {
 	}
 	
 	@Test
-	public void testaFatorialZero() throws FilaException {
+	public void testFila() throws FilaException {
 		
-//		List<Paciente> list = new ArrayList<Paciente>();
-//		list.add(new Paciente(codigo, nome, risco));
-//		
-//		
-//		assertEquals(resposta, 1);
-//		
-//		Paciente [codigo=70, nome=Julio, risco=VERMELHO]
-//		Paciente [codigo=21, nome=Geraldo, risco=VERMELHO]
-//		Paciente [codigo=22, nome=Andressa, risco=AMARELO]
-//		Paciente [codigo=30, nome=Marcio, risco=VERDE]
-//		Paciente [codigo=25, nome=Maria, risco=VERDE]
+		appPaciente.addPacienteFila(new Paciente(21, "Geraldo", Risco.VERMELHO));
+		appPaciente.addPacienteFila(new Paciente(70, "Julio", Risco.VERMELHO));
+		appPaciente.addPacienteFila(new Paciente(25, "Maria", Risco.VERDE));
+		appPaciente.addPacienteFila(new Paciente(30, "Marcio", Risco.VERDE));
+		appPaciente.addPacienteFila(new Paciente(22, "Andressa", Risco.AMARELO));
 		
+		assertEquals("Julio", appPaciente.fila.get(0).getNome());
+		assertEquals("Geraldo", appPaciente.fila.get(1).getNome());
+		assertEquals("Andressa", appPaciente.fila.get(2).getNome());
+		assertEquals("Marcio", appPaciente.fila.get(3).getNome());
+		assertEquals("Maria", appPaciente.fila.get(4).getNome());
 	}
    
 }
